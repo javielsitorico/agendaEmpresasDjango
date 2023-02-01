@@ -7,12 +7,18 @@
      <title>Lista de Empresas</title>
 </head>
 <body>
-     {% for empresa in empresas %}
+
+     {% comment %}  
+          El nombre por defecto que manda la clase al template
+          es el nombre de la clase en minuscula + '_list' 
+     {% endcomment %}
+
+     {% for empresa in empresa_list %}
           {% if not forloop.first %}<hr>{% endif %}
           <ul>
                <li>{{ empresa.nombre }}</li>
                <li>{{ empresa.tipo }}</li>
-               <li>{{ empresa.telefono }}</li>
+               <li><a href="{% url 'detalle' empresa.id %}">Saber más</a></li>
           </ul>
      {% endfor %}
 </body>
