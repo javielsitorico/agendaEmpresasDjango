@@ -13,6 +13,8 @@
           es el nombre de la clase en minuscula + '_list' 
      {% endcomment %}
 
+     <a href="{% url 'crear' %}">Crear Empresa</a>
+
      {% for empresa in empresa_list %}
           {% if not forloop.first %}<hr>{% endif %}
           <ul>
